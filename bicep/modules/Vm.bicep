@@ -16,6 +16,7 @@ var VmNicName = '${VmName}ni01'
 var VmPipName = '${VmName}pip01'
 
 param adminUsername string
+@secure()
 param adminPassword string
 
 resource Pip 'Microsoft.Network/publicIPAddresses@2020-06-01' = {
@@ -55,7 +56,7 @@ resource Nic 'Microsoft.Network/networkInterfaces@2020-08-01' = {
     enableIPForwarding: false
   }
   dependsOn:[
-    Pip
+    
   ]
 }
 
@@ -111,7 +112,7 @@ resource VirtualMachine 'Microsoft.Compute/virtualMachines@2019-07-01' = {
     }
   }
   dependsOn:[
-    Nic
+    
   ]
 }
 

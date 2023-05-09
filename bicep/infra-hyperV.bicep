@@ -4,12 +4,13 @@ param nestedvirtuaLocation string = 'westeurope'
 param nestedvirtuaVnetName string = 'vnet-hyperv'
 param nestedvirtuaVnetAddressSpace string = '10.221.0.0/24'
 param nestedvirtuaDefaultSubnet string = '10.221.0.0/24'
-param nestedvirtualStorageAccountName string = 'diagstoragenestedvirtua'
+param nestedvirtualStorageAccountName string = 'mynestedstor23121989'
 
 // VMs
-param VmSize string = 'Standard_E8s_v4'
+param VmSize string = 'Standard_D4s_v3'
 param adminUsername string = 'microsoft'
-param adminPassword string = 'Microsoft=1Microsoft=1'
+@secure()
+param adminPassword string
 param VmOsType string = 'Windows' 
 param VmOsPublisher string = 'MicrosoftWindowsServer' 
 param VmOsOffer string = 'WindowsServer' 
